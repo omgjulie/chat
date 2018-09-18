@@ -1,0 +1,22 @@
+.app-wrapper {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    @include d-flex($align-items: center, $justify-content: center);
+}
+
+.application {
+    max-height: 770px;
+    max-width: 960px;
+    overflow: hidden;
+    background-color: var(--app-back, #f5f6f8);
+}
+
+
+// Avatar Styles
+.avatar {
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}

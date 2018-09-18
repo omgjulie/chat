@@ -1,0 +1,55 @@
+// Application Header Styles
+.app-header {
+    @include d-flex($align-items: center, $justify-content: space-between);
+    padding: 15px var(--side-indent);
+    background-color: var(--primary);
+    color: var(--white);
+
+    .toggle-button {
+        cursor: pointer;
+    
+        &-element{
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--white);
+            transition: 0.2s;
+            &:nth-of-type(2) {
+                width: 18px;
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+        }
+        &:hover {
+            .toggle-button-element {
+                background-color: var(--dark);
+            }
+        }
+    }
+
+    .right-block {
+        @include d-flex($align-items: center);
+    }
+
+    .search {
+        margin-right: 25px;
+        font-size: 25px;
+    }
+
+    .avatar {
+        margin-right: 25px;
+    }
+
+    .account-info {
+        @include d-flex($align-items: center);
+    }
+
+    .account-status {
+        @include d-flex($align-items: center, $justify-content: space-between);
+        color: var(--grey-300);
+        letter-spacing: 0.1em;
+        line-height: 12px;
+    }
+  
+}
+
