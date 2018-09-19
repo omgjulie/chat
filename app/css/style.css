@@ -31,8 +31,16 @@ time, mark, audio, video, textarea {
   --grey-100: #f6fafe;
   --grey-200: #8ea1b4;
   --grey-300: #2775a9;
+  --grey-400: #d6e3ec;
+  --grey-500: #ecf0f2;
   --dark: #16315c;
-  --side-indent: 53px; }
+  --blue: #3598db;
+  --green: #51dacf;
+  --side-indent: 15px; }
+
+@media (min-width: 576px) {
+  :root {
+    --side-indent: 53px; } }
 
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -2370,12 +2378,33 @@ body {
   color: var(--grey-200);
   font-weight: 400; }
 
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--blue); }
+
 h4 {
   font-size: 15px;
   font-weight: 700;
   line-height: 2;
   letter-spacing: 0.025em;
   color: var(--grey-100); }
+
+.btn {
+  display: inline-block;
+  border-radius: 2px;
+  padding: 12px 30px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  background-color: var(--grey-400);
+  color: var(--grey-200);
+  border: 1px solid var(--grey-400);
+  cursor: pointer; }
+  .btn:hover {
+    background-color: transparent; }
 
 .app-wrapper {
   position: relative;
@@ -2415,7 +2444,9 @@ h4 {
   align-items: center;
   padding: 15px var(--side-indent);
   background-color: var(--primary);
-  color: var(--white); }
+  color: var(--white);
+  -webkit-box-shadow: 0 0 30px 5px rgba(52, 152, 219, 0.4);
+  box-shadow: 0 0 30px 5px rgba(52, 152, 219, 0.4); }
   .app-header .toggle-button {
     cursor: pointer; }
     .app-header .toggle-button-element {
@@ -2463,5 +2494,98 @@ h4 {
     color: var(--grey-300);
     letter-spacing: 0.1em;
     line-height: 12px; }
+
+.app-main {
+  padding: 20px var(--side-indent);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.sidebar {
+  padding: 12px 15px;
+  border-radius: 2px;
+  background-color: var(--white);
+  -ms-flex-preferred-size: 33%;
+  flex-basis: 33%;
+  -webkit-box-shadow: 0 0 25px 0 rgba(52, 152, 219, 0.1);
+  box-shadow: 0 0 25px 0 rgba(52, 152, 219, 0.1); }
+  .sidebar-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-bottom: 1px solid var(--grey-500);
+    padding-bottom: 12px;
+    margin-bottom: 15px; }
+
+.chat {
+  -ms-flex-preferred-size: 70%;
+  flex-basis: 70%; }
+
+.user-list {
+  list-style: none; }
+  .user-list .user {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .user-list .user-img {
+    position: relative; }
+    .user-list .user-img .count {
+      position: absolute;
+      top: -5px;
+      right: -3px;
+      -webkit-box-shadow: 0 0 10px 2px rgba(52, 152, 219, 0.5);
+      box-shadow: 0 0 10px 2px rgba(52, 152, 219, 0.5);
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      line-height: 20px;
+      background-color: var(--primary);
+      font-weight: 700;
+      color: var(--white);
+      border-radius: 50%; }
+  .user-list .user-name {
+    margin-left: 12px;
+    margin-right: 12px; }
+
+.last-message {
+  max-width: 154px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  white-space: nowrap; }
+
+.is-typing {
+  display: none; }
+
+.user-status {
+  text-align: right; }
+
+.status {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--green);
+  -webkit-box-shadow: 0px 2px 4px 0px #51dacf;
+  box-shadow: 0px 2px 4px 0px #51dacf; }
+
+.time {
+  display: block;
+  white-space: nowrap; }
 
 /*# sourceMappingURL=style.css.map */

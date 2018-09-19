@@ -7,8 +7,18 @@
     --grey-100: #f6fafe;
     --grey-200: #8ea1b4;
     --grey-300: #2775a9;
+    --grey-400: #d6e3ec;
+    --grey-500: #ecf0f2;
     --dark: #16315c;
+    --blue: #3598db;
+    --green: #51dacf;
 
     // Indents
-    --side-indent: 53px;
+    --side-indent: 15px;
+}
+
+@media (min-width: 576px) {
+    :root {
+        --side-indent: 53px;
+    }
 }
