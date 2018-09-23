@@ -6,6 +6,7 @@
 }
 
 .application {
+    position: relative;
     max-height: 770px;
     max-width: 960px;
     overflow: hidden;
@@ -18,5 +19,21 @@
     overflow: hidden;
     width: 40px;
     height: 40px;
+    min-width: 40px;
     border-radius: 50%;
+}
+
+.chat-body,
+.user-list {
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: var(--grey-500);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--primary);
+    }
 }
