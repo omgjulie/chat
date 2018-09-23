@@ -24,7 +24,7 @@ time, mark, audio, video, textarea {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-:root {
+body {
   --primary: #3498db;
   --white: #fff;
   --app-back: #f5f6f8;
@@ -41,8 +41,13 @@ time, mark, audio, video, textarea {
   --side-indent: 15px; }
 
 @media (min-width: 576px) {
-  :root {
+  body {
     --side-indent: 53px; } }
+
+body.night-mode {
+  --app-back: #88898b;
+  --primary: #484c57;
+  --dark: #111314; }
 
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -2491,6 +2496,17 @@ h4 {
         margin-bottom: 5px; }
     .app-header .toggle-button:hover .toggle-button-element {
       background-color: var(--dark); }
+    .app-header .toggle-button.toggle-active .toggle-button-element:nth-of-type(1) {
+      -webkit-transform: translateY(8px) rotate(45deg);
+      transform: translateY(8px) rotate(45deg); }
+    .app-header .toggle-button.toggle-active .toggle-button-element:nth-of-type(2) {
+      opacity: 0; }
+    .app-header .toggle-button.toggle-active .toggle-button-element:nth-of-type(3) {
+      -webkit-transform: translateY(-8px) rotate(-45deg);
+      transform: translateY(-8px) rotate(-45deg); }
+    @media (min-width: 768px) {
+      .app-header .toggle-button {
+        display: none; } }
   .app-header .right-block {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2503,6 +2519,8 @@ h4 {
     font-size: 25px; }
   .app-header .avatar {
     margin-right: 25px; }
+  .app-header .account-text {
+    position: relative; }
   .app-header .account-info {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2522,7 +2540,59 @@ h4 {
     align-items: center;
     color: var(--grey-300);
     letter-spacing: 0.1em;
-    line-height: 12px; }
+    line-height: 12px;
+    cursor: pointer; }
+  .app-header .account-menu {
+    list-style: none;
+    padding: 10px;
+    background-color: var(--white);
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 50%;
+    border-radius: 4px;
+    color: var(--dark);
+    opacity: 0;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    visibility: hidden;
+    -webkit-transform: translate(-50%, 5px);
+    transform: translate(-50%, 5px); }
+    .app-header .account-menu li {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      white-space: nowrap; }
+    .app-header .account-menu.account-menu-open {
+      opacity: 1;
+      visibility: visible;
+      -webkit-transform: translate(-50%, 0);
+      transform: translate(-50%, 0); }
+    .app-header .account-menu .toggle-box {
+      margin-left: 15px;
+      min-width: 35px;
+      height: 20px;
+      position: relative;
+      border-radius: 20px;
+      background-color: #ccc;
+      padding: 2px;
+      cursor: pointer; }
+      .app-header .account-menu .toggle-box .toggle-circle {
+        display: inline-block;
+        width: 50%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: var(--white);
+        position: relative;
+        left: 0;
+        -webkit-transition: 0.2s;
+        transition: 0.2s; }
+      .app-header .account-menu .toggle-box.toggle-active {
+        background-color: var(--green); }
+        .app-header .account-menu .toggle-box.toggle-active .toggle-circle {
+          left: 50%; }
 
 .app-main {
   padding: 20px var(--side-indent);
@@ -2687,7 +2757,9 @@ h4 {
           left: auto;
           right: -7px; }
   .chat-footer {
-    margin-top: auto; }
+    margin-top: auto;
+    -webkit-box-shadow: 0 0 25px 0 rgba(52, 152, 219, 0.05);
+    box-shadow: 0 0 25px 0 rgba(52, 152, 219, 0.05); }
     .chat-footer .chat-form {
       position: relative; }
     .chat-footer .input-message {

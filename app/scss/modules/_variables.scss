@@ -1,5 +1,5 @@
 
-:root {
+body {
     // Colors
     --primary: #3498db;
     --white: #fff;
@@ -20,7 +20,13 @@
 }
 
 @media (min-width: 576px) {
-    :root {
+    body {
         --side-indent: 53px;
     }
+}
+
+body.night-mode {
+    --app-back: #88898b;
+    --primary: #484c57;
+    --dark: #111314;
 }
